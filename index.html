@@ -33,9 +33,9 @@
                     <div class="prev" @click="prevImg"></div>
                     <div class="next" @click="nextImg"></div>
 
-                    <div class="thumb" :class="index === indexActive ?'active' :''">
-                        <img v-for="(image, index) in slides[indexActive].image" :key="index"
-                            :src="slides[indexActive].image" :alt="'immagine movie '+ index" />
+                    <div v-for="(slide, index) in slides" :key="index" class="thumb"
+                        :class="index === indexActive ? 'active' :''">
+                        <img :src="slide.image" :alt="'immagine movie '+ index" />
                     </div>
                     <!-- <div class="thumb">
                         <img src="./img/02.webp" alt="Ratchet & Clank" />

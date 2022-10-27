@@ -29,7 +29,7 @@ const { createApp } = Vue
 const app = createApp({
     data() {
         return {
-            indexActive: "0",
+            indexActive: 0,
             slides: [
                 {
                     image: './img/01.webp',
@@ -60,13 +60,13 @@ const app = createApp({
         prevImg() {
             this.indexActive--
             if (this.indexActive < 0) {
-                this.indexActive = this.slides[indexActive].image.length - 1
+                this.indexActive = this.slides.slide.image.length - 1
             }
         },
         nextImg() {
             this.indexActive++
-            if (this.indexActive = this.slides[indexActive].image.length - 1) {
-                this.indexActive < 0
+            if (this.indexActive > this.slides.slide.image.length - 1) {
+                this.indexActive = 0
             }
         }
 
