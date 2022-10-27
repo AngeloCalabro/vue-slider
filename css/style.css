@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .container {
     height: 100vh;
     display: flex;
@@ -14,7 +18,7 @@
 .item {
     float: left;
     width: 700px;
-    height: 300px;
+    height: 400px;
     position: relative;
 }
 
@@ -28,19 +32,23 @@
     position: absolute;
     right: 20px;
     bottom: 20px;
+    left: 20px;
     text-align: right;
     color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 1rem;
 }
 
 .thumbs {
     float: left;
-    height: 300px;
+    height: 400px;
     background: #000;
     position: relative;
 }
 
 .thumb {
-    height: calc((300px) / 5);
+    height: calc((400px) / 5);
     opacity: 0.5;
 }
 
@@ -53,6 +61,7 @@
 .thumb.active {
     border: 2px solid #ccc;
     opacity: 1;
+    scale: 1.1;
 }
 
 .prev,
@@ -67,6 +76,14 @@
     transform: translate(-50%);
     cursor: pointer;
     z-index: 999;
+    opacity: 0.8;
+    transition: 1s;
+}
+
+.prev:hover,
+.next:hover {
+    scale: 1.5;
+    opacity: 1
 }
 
 .next {
